@@ -1,0 +1,11 @@
+.pio/
+.platformio-core/
+.venv/
+__pycache__/
+*.pyc
+.vscode/
+.DS_Store
+backups/
+include/wifi_credentials.h
+include/device_settings.h
+*.MOV
