@@ -1,7 +1,9 @@
 # Sonos ESP32 Remote
 
 A physical Sonos remote built with an M5Stack CoreS3 and Unit Fader. It talks
-to Sonos on your local network. You do not need Home Assistant or a cloud API.
+to Sonos on your local network, loads your Sonos Favorites, and groups every
+room to the group already playing. You do not need Home Assistant or a cloud
+API.
 
 ## See it work
 
@@ -17,8 +19,9 @@ to Sonos on your local network. You do not need Home Assistant or a cloud API.
 
 I built a Sonos remote for the things I use most:
 
-- Group all speakers with one touch.
+- Group all speakers to the room already playing with one touch.
 - Control group volume with a physical volume control.
+- Start saved Sonos radio and Spotify favorites.
 - Resume a previous session and pause.
 
 I found it quite annoying to go into the app for this. On the Sonos speakers,
@@ -48,6 +51,10 @@ file and is never printed by the setup script.
 > [!IMPORTANT]
 > The first installation is flashed over USB. Wi-Fi is used afterward to talk
 > to Sonos; this version does not include wireless firmware updates.
+
+Favorites are loaded directly from Sonos each time you open the Favorites
+screen. Add, remove, or rename them in the Sonos app without reflashing the
+remote.
 
 ## Connect the fader
 
@@ -110,10 +117,10 @@ lists every room discovered by the remote.
 - Check the Wi-Fi credentials and restart the CoreS3.
 - Confirm that the chosen room is online and visible in the Sonos app.
 
-### Group volume does not work
+### `GROUP ALL` says nothing is playing
 
-Select the room that should be the group coordinator, then tap **GROUP ALL**.
-The group-volume endpoint belongs to the coordinator.
+Start music on one Sonos room or group, then tap **GROUP ALL** again. The remote
+finds the active group coordinator and joins every visible Sonos room to it.
 
 ## Security
 
